@@ -1,0 +1,148 @@
+\documentclass[a4paper,10pt,onecolumn,oneside,openany]{jsbook}
+
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+%\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage{ascmac}
+\usepackage{makeidx}
+\usepackage[toc,page]{appendix}
+\usepackage{array}
+
+\makeindex
+
+\setlength{\textwidth}{155truemm}
+\setlength{\fullwidth}{\textwidth}
+\setlength{\oddsidemargin}{27truemm}
+\addtolength{\oddsidemargin}{-1truein}
+
+\setlength{\topmargin}{25truemm}
+\setlength{\textheight}{237truemm}
+\addtolength{\topmargin}{-1truein}
+
+\def\linesparpage#1{\baselineskip=\textheight
+   \divide\baselineskip by #1}
+\def\kcharparline#1{
+   \ifx\xkanjiskip\undefined
+
+   \jintercharskip 0mm plus 0.2mm minus 0.2mm
+   \else
+
+   \xkanjiskip 0mm plus 0.2mm minus 0.2mm
+   \fi
+   \settowidth{\textwidth}{あ}
+   \multiply\textwidth by #1}
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+\linesparpage{32}
+\kcharparline{40}
+\chapter{実験手法}
+\section{試料作製}
+\subsection{GaAsHEMT基板構造}
+本研究で使用したGaAsHEMT基板は住友電気工業株式会社のウェハNo.501672HEMT
+基板を用いた。特性表は以下の通りである。また、四端子測定で用いたダミー基板はバルクのGaAs基板である。
+\newcolumntype{I}{!{\vrule width 1.2pt}}
+\newlength\savedwidth
+\newcommand{\wcline}[1]{\noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 1.2pt} \cline{#1}
+\noalign{\global\arrayrulewidth\savedwidth}}
+\begin{table}[htb]
+  \begin{center}
+    \caption{本研究に用いたWaferの特性表}
+    \begin{tabular}{|cIc|c|cIc|} \hline
+      構造 & ドーピング濃度(cm${}^\text{-3}$) & ドーパント & 膜厚(\AA) & Al組成 \\ \hline
+      GaAs & ー & ー & 50 & ー \\\hline
+      N-AlGaAs & 1.0E18 & Si & 650 & 0.265 \\\wcline{1-5}
+      AlGaAs& ー & ー & 300 & 0.265 \\\hline
+      GaAs & ー & ー & 8000 & ー \\\hline
+      \multicolumn{1}{|cI}{GaAs基板}& \multicolumn{4}{c|}{3^{n}\mbox{GaAs　導電型:半絶縁　厚さ:600}\mu \mbox{m　直径:76mm　面方位:(100)}\pm 0.5^{\circ}}\\ \hline
+    \end{tabular}
+    \label{tab:price}
+  \end{center}
+\end{table}
+
+\subsection{試料のデザイン}
+超伝導と2次元電子系との相互作用を調べるため，
+最も基本的と思われる試料構造を設計した．図\ref{fig:abstsub}のようにメサ上にある間隔をもった
+２つの超伝導体を蒸着させ、オーミック接触によりで２次元電子へコンタクトをとる
+ことができ、SNS接合を形成できる。これにより、超伝導ギャップ内外に多重反射等
+に起因する特徴的な電流電圧特性が現れ、様々な情報が得られる。
+%あとでHEMTとdummyについて追加
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=12cm]{../images/abstsub0.eps}
+  \end{center}
+  \caption{作成したSNS接合の概略図}
+   \label{fig:abstsub}
+\end{figure}
+
+\subsection{微細加工プロセス}
+基本的にCAD図形ソフトを用いてナノスケールの電極パターンを設計し、
+電子線リソグラフィー、フォトリソグラフィーの技術を用いて、電極パターンの描画を行い現像した後、
+エッチングまたは電子線蒸着装置を用いて金属電極を蒸着させるプロセスを繰り返すことで試料作製を行った。\\
+以下に各プロセスに共通する基本的な工程を述べたのち、試料作製の工程を説明する。\\
+\subsubsection{基本的な工程}
+\begin{enumerate}
+ \item 基板洗浄　\\
+    アセトン2回、IPA1回分各５分ずつ入れ、窒素でブローさせ、110度で熱したホットプレートにのせ、
+    10分間加熱し加熱させる。
+ \item レジスト塗布 \\
+    レジストを約1滴程滴下し、スピンコーターを用いてレジストの厚さを均一にする。
+    スピンコーターの条件は次の通り。(500rpm 5秒、slope 5秒、4000rpm 50秒、slope 5秒、end)
+    その後、基板の裏についたレジストをアセトンで拭きとる。
+ \item プリベーキング \\
+ レジストを固化させるためにホットプレートで加熱する。各レジストにおける条件は以下の通り。(PMMA 180℃ 3分、S1813 180℃ 5分、LOR 115℃ 3分)
+ \item 露光　\\
+    パッド等の大きなパターンはLED描画装置(以下LED)で描画を行い、超電導電極等の細かいパターンは電子線描画装置(以下EB)で露光した。
+　\item 現像　\\
+    露光されたレジストを現像液に浸けることにより分解して取り除いた。本研究では、PMMAの現像にはMIBK(メチルイソブチルケトン)
+    とIPAを1対2の割合で薄めたものを10度に冷やし、2分程度入れ、その後、IPAに1分入れ、現像を止める。
+    またLORとS1813の2層レジストではNMDに90～120秒間入れた後、純水の入ったビーカーにくぐらせ、ある程度洗い流した後、
+    別の純水の入ったビーカーに1分入れ、現像を止める。
+  \item 蒸着　\\
+    まず、表面に有機物が付いている可能性があるので、希硫酸に30秒入れ、その後純水の入ったビーカー
+    に基板を移し、流水を流し込み、3～5分程度放置し、窒素ブローを行う。
+    蒸着装置のソースに蒸着させたい材料が入っているか確認し、真空の状態でソースに電子線を当て、膜厚計で所望の膜厚に
+    なるまで適宜シャッターの開閉を行い、作業を行った。
+  \item エッチング　\\
+　  基板のエッチングは全てウェットエッチングを用いた。ウェットエッチングでは基板をエッチング液
+    (H${}_\text{2}$SO${}_\text{4}$:H${}_\text{2}$O${}_\text{2}$:H${}_\text{2}$O＝1:8:160)に入れ、恒温槽で
+    10度に保ちながらエッチングを行う。適当な時間で基板を取り出し、接触式の段差計でレジスト表面からの深さを計測しながら
+    レートを出し、再度エッチングを行う。所望の深さになるまで繰り返す。これにより、レジストの無い部分のみ化学的に溶解していく。
+  \item リフトオフ　\\
+　これは蒸着、またはエッチングの後にレジストやその上にある金属等を除去する作業である。110度に加熱したNMP(N-メチル-2-ピロリドン)に
+15分入れ、アセトンの入ったビーカーにくぐらせ、表面が乾かないように手早く基板を取り出し、アセトンのスプレーを4方向から数回吹き付け、残った
+金属を取り除く。その後2度アセトンに5分入れ、IPAに5分入れた後に、窒素ガンで乾燥させる。
+\end{enumerate}
+\subsubsection{試料作製の工程}
+\begin{enumerate}
+ \item 位置合わせ用マーカー作製 \\
+ 基板洗浄を行い、PMMAを塗布後、ベーキングを行い、EBでパターンを描画後、現像を行った。
+ 電子線蒸着装置を用いてTi(20nm),Au(180nm)の蒸着を行った。その後、リフトオフを行った。
+ \item メサエッチング \\
+ 基板洗浄を行い、S1813のみ一層レジストにし、LEDでパターンを描画後、現像を行った。
+ エッチング液に浸し、深さが300nmになるようにエッチングを行った。リフトオフ後、再度測定すると約270nmだった。
+ \item ブリッジの作成 \\
+ ブリッジとはNbTi電極とAu電極を繋ぐ部分である。基板の洗浄を行い、PMMAの二層レジストにし、EBでパターンを描画後、現像を行った。
+ 電子線蒸着装置を用いてTi(10nm),Au(90nm)の蒸着を行った。その後、リフトオフを行った。
+ \item オーミックコンタクトの作成 \\
+ この部分はメサ上から伸びる部分でバイアスをかけることで2次元電子系の状態を変えることができる部分である。
+ 基板洗浄を行い、LORとS1813の二層レジストにし、LEDでパターンを描画後、現像を行った。
+ 希硫酸処理はせずに抵抗加熱式蒸着装置を用いてAuGe(200nm),Ni(30nm)の蒸着を行った。その後、リフトオフを行った。
+ \item Au電極の作成 \\
+ 基板洗浄を行い、LORとS1813の二層レジストにし、LEDでパターンを描画後、現像を行った。
+ 希硫酸処理はせずに電子線蒸着装置を用いてTi(20nm),Au(200nm)の蒸着を行った。リフトオフを行った。
+ \item NbTi電極の作成 \\
+
+ \item アニール \\
+ アニールすることで、メサのバイアス部の電極と超電導電極が2次元電子系とのオーミックなコンタクトをとることができる。
+\end{enumerate}
+%作成基板の画像としては光顕の全体外観とダミー基板の超伝導電極とアニール後の画像
+\section{測定系}
+%冷却フィルタ
+\appendix
+\end{document}

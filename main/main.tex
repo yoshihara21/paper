@@ -1,0 +1,84 @@
+\documentclass[a4paper,10pt,onecolumn,oneside,openany]{jsbook}
+
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+%\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage{ascmac}
+\usepackage{makeidx}
+\usepackage[toc,page]{appendix}
+\usepackage{docmute}
+\usepackage{array}
+
+\makeindex
+
+\setlength{\textwidth}{155truemm}
+\setlength{\fullwidth}{\textwidth}
+\setlength{\oddsidemargin}{27truemm}
+\addtolength{\oddsidemargin}{-1truein}
+
+\setlength{\topmargin}{25truemm}
+\setlength{\textheight}{237truemm}
+\addtolength{\topmargin}{-1truein}
+
+\def\linesparpage#1{\baselineskip=\textheight
+   \divide\baselineskip by #1}
+\def\kcharparline#1{
+   \ifx\xkanjiskip\undefined
+
+   \jintercharskip 0mm plus 0.2mm minus 0.2mm
+   \else
+
+   \xkanjiskip 0mm plus 0.2mm minus 0.2mm
+   \fi
+   \settowidth{\textwidth}{あ}
+   \multiply\textwidth by #1}
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+\linesparpage{32}
+\kcharparline{40}
+
+
+\begin{titlepage}
+\begin{center}
+{\huge 卒業論文 \\ }
+\vspace*{150truept}
+{\huge 超電導接合における二次元電子中の電気伝導}\\
+\vspace{100truept}
+{\large 指導教員：大岩　顕　教授 \\ }
+\vspace{30truept}
+{\large 2018/2/17}\\%%\hspace{15pt}
+{\large 学籍番号 \hspace{15pt} 08D14160}\\
+{\large 氏名　\hspace{15pt}　吉原　拓哉}\\
+\vspace{100truept}
+{\huge 大阪大学工学部電子情報工学科}\\
+{\huge 量子電子デバイスコース}\\
+{\huge 量子システム創成研究分野}\\
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\mainmatter
+
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+
+\input{../fablication/fablication.tex}
+%\begin{thebibliography}{99}
+%  \input{reference.txt}
+%\end{thebibliography}
+
+
+\appendix
+
+\newpage
+\printindex
+
+\end{document}
