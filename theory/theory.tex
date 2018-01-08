@@ -1,0 +1,83 @@
+\documentclass[a4paper,10pt,onecolumn,oneside,openany]{jsbook}
+
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+%\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage{ascmac}
+\usepackage{makeidx}
+\usepackage[toc,page]{appendix}
+\usepackage{array}
+\usepackage{docmute}
+
+\makeindex
+
+\setlength{\textwidth}{155truemm}
+\setlength{\fullwidth}{\textwidth}
+\setlength{\oddsidemargin}{27truemm}
+\addtolength{\oddsidemargin}{-1truein}
+
+\setlength{\topmargin}{25truemm}
+\setlength{\textheight}{237truemm}
+\addtolength{\topmargin}{-1truein}
+
+\def\linesparpage#1{\baselineskip=\textheight
+   \divide\baselineskip by #1}
+\def\kcharparline#1{
+   \ifx\xkanjiskip\undefined
+
+   \jintercharskip 0mm plus 0.2mm minus 0.2mm
+   \else
+
+   \xkanjiskip 0mm plus 0.2mm minus 0.2mm
+   \fi
+   \settowidth{\textwidth}{あ}
+   \multiply\textwidth by #1}
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+\linesparpage{32}
+\kcharparline{40}
+\chapter{研究背景}
+\section{超電導接合}
+\subsection{超伝導基礎}
+超伝導は臨界温度以下で抵抗が零になる完全導電性と外部磁場中の
+超電導体の内部において磁束密度が零になる完全反磁性(マイスナ―効果)がある。
+この現象は、1911年にH.K.Onnesによって実験的に発見され、1957年にはBardeen,Cooper,Schriefferによって提出された
+BCS理論により理論的な説明がされた。この理論はフォノンを媒介とした電子間引力が働くことでクーパー対
+が形成され、それらが凝縮することで超電導としての性質が現れることが示された。また、凝縮したクーパー対は
+巨視的位相が揃っており、これを反映する重要な効果が以下に示すジョセフソン効果である。
+
+\subsection{ジョセフソン効果}
+ジョセフソン効果とは2つの超伝導体の間に絶縁体の薄膜を挟み込むことで、クーパー対がトンネル効果に
+よって他の超伝導体に流れる現象であり、この電流をジョセフソン電流という。またこの効果
+を示すトンネル接合をジョセフソン接合という。この接合系ではそれぞれの超伝導体が巨視的な位相を持っており、
+位相を$\phi _1$,$\phi _2$とするとジョセフソン電流jは次式(\ref{Josephson effect})のような関係がある。
+\begin{eqnarray}
+j \propto \sin(\phi _2 - \phi _1)
+\label{Josephson effect}
+\end{eqnarray}
+また、一般的なジョセフソン接合では 絶縁体が用いられるが、常伝導金属、半導体においても基本的には成り立つ。
+\subsection{Andreev反射}
+超伝導体(S)に常伝導体(N)を接合させたSN接合においてAndreev反射がみられる。これは超伝導ギャップよりも低いエネルギー
+で常伝導側から入射した電子が超伝導体の中にクーパー対となって入り、代わりに常伝導体側に正孔が反射される現象である。
+それぞれの部材でBogoliubov-de Gennes方程式\cite{}を解くことで分散関係が得られ、波動関数にポテンシャル障壁等の
+境界条件を与えることで、反射率を求めることができる。また、Blonder,Tinkham,Klapwijk (BTK)理論に当てはめることで
+伝導度等の輸送特性が得られる。
+
+%\[7] P. de Gennes. Superconductivity of metals and alloys. Addison-Wesley New York, 1989. BdG方程式
+%\]][6] G. E. Blonder, M. Tinkham, and T. M. Klapwijk. Transition from metallic to tunneling regimes
+%\in superconducting microconstrictions: Excess current, charge imbalance, and supercurrent
+%\conversion. Phys. Rev. B, Vol. 25, pp. 4515{4532, Apr 1982. BTK方程式
+\subsection{近接効果}
+\section{半導体メゾスコピック系と超伝導体接合}
+\subsection{ナノワイヤと量子ドットとの接合}
+\subsection{2次元電子系との接合}
+\subsection{GaAs2次元電子系との接合}
+\section{二次元電子系/超伝導接合の先行研究}
+
+\end{document}

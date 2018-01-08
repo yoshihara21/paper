@@ -1,0 +1,83 @@
+\documentclass[a4paper,10pt,onecolumn,oneside,openany]{jsbook}
+
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+%\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage{ascmac}
+\usepackage{makeidx}
+\usepackage[toc,page]{appendix}
+\usepackage{array}
+\usepackage{docmute}
+
+\makeindex
+
+\setlength{\textwidth}{155truemm}
+\setlength{\fullwidth}{\textwidth}
+\setlength{\oddsidemargin}{27truemm}
+\addtolength{\oddsidemargin}{-1truein}
+
+\setlength{\topmargin}{25truemm}
+\setlength{\textheight}{237truemm}
+\addtolength{\topmargin}{-1truein}
+
+\def\linesparpage#1{\baselineskip=\textheight
+   \divide\baselineskip by #1}
+\def\kcharparline#1{
+   \ifx\xkanjiskip\undefined
+
+   \jintercharskip 0mm plus 0.2mm minus 0.2mm
+   \else
+
+   \xkanjiskip 0mm plus 0.2mm minus 0.2mm
+   \fi
+   \settowidth{\textwidth}{あ}
+   \multiply\textwidth by #1}
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+\linesparpage{32}
+\kcharparline{40}
+\chapter{序論}
+\section{はじめに}
+近年、量子物性分野ではトポロジカルな量子現象が注目されており、研究が盛んに行われている。
+歴史的背景としては1980年にvon Klitzingらによって量子ホール効果\cite{QH}から始まっており、これは2次元電子系において
+磁場中で測定されるホール伝導率が量子化される現象であるが、これがトポロジカルな量を持っている。
+そして2007年にKaneらによってトポロジカル絶縁体\cite{Topologivcal}が提唱され、発見までに至っている。
+トポロジカル絶縁体とはバルク部が絶縁体であるが、表面では金属的な性質を持っている物質であり、
+表面での電子の伝導状態は不純物の影響を受けないことから次世代の低電力デバイスとして開発が期待されている。
+このトポロジーの理論的な発見が引金となり、量子ホール系にとどまらずトポロジカル量子状態の研究が
+多く行われるようになった。また、2011年には安藤陽一教授らによってトポロジカル超伝導体\cite{TopologivcalS}が確認され、
+こちらも同様に内部では超伝導状態であるが、表面ではギャップレスな状態をとる。
+また、表面での電子がマヨラナ粒子として振舞うことが理論的に予測されているが、発見までには至っていない。
+マヨラナ粒子とは粒子の反粒子が自身であるという特徴をもっており、擾乱によって量子情報が損失しないため、
+実現すれば量子コンピュータとしての応用が期待されている。このような背景から、
+古くからジョセフソン効果を軸に半導体中の近接効果や２次元電子中の臨界電流の電気的操作などの研究が行われ、
+SQUID等で応用されてきたが、最近では、マヨラナ粒子の探求を目的とした、２次元電子系の超伝導を伴う量子ホール状態などの
+接合特性を解明を行い、高磁場に耐えうる高速操作可能な良好な超伝導接合の開発を目指した研究が多く行われてい
+る。
+\section{研究目的}
+最近では、GaAs量子井戸における近接効果の研究で、アンドレ―エフ反射が多くのグループで確認されており、
+注目されている。GaAsはInAsに比べてバンドギャップの中心付近にフェルミエネルギーが分布しているため、
+高いショットキー障壁を構築しやすく、またInAs臨界磁場が数十mTであるのに対して、GaAsが十数Tと大きく異なり、
+高磁場でははっきりとした超伝導と量子ホール効果の相関が確認された。\cite{nature}
+今回行う研究ではこの先行研究に基づいて、実際に、新たに超伝導電磁石で使われているNbTiをGaAs二次元電子系と接合し、
+その接合特性の評価を行うことで今後、超伝導を接合したデバイスを作製する上で有用になると考えている。
+超伝導を接合したデバイスの作製において、まず接合界面を良好
+以上を踏まえて、本研究では以下の2つの課題に取り組んだ。
+\begin{itemize}
+   \item 四端子測定用のサンプルを作成し、超伝導そのものの電気伝導特性を評価した。
+   \item 超伝導間の距離が1$\mu$m程度のジョセフソン接合を作製し、GaAs二次元電子系における超電導接合の電気伝導特性を評価した。
+ \end{itemize}
+\section{本論文の構成}
+本論文は全6章で構成されている。第2章では、超伝導接合の基本的な理論から
+それに関する先行研究について述べる。第3章では、GaAs二次元電子系の超伝導接合の試料作製
+や、測定系や測定方法について述べた。第4章ではNbTiの四端子測定を行い、その結果と考察を述べた。
+第5章ではGaAs二次元電子系における超伝導接合の試料について測定を行い、その結果と考察を述べた。
+第6章では、本研究を総括し課題について述べた。
+
+\end{document}

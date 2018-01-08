@@ -11,6 +11,17 @@
 \usepackage[toc,page]{appendix}
 \usepackage{docmute}
 \usepackage{array}
+\usepackage{wrapfig}
+\makeatletter
+\newcommand{\subsubsubsection}{\@startsection{paragraph}{4}{\z@}%
+  {1.0\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
+  {.1\Cvs \@plus.3\Cdp}%
+  {\reset@font\sffamily\normalsize}
+}
+\makeatother
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\captionsetup{compatibility=false}
 
 \makeindex
 
@@ -48,11 +59,11 @@
 \begin{center}
 {\huge 卒業論文 \\ }
 \vspace*{150truept}
-{\huge 超電導接合における二次元電子中の電気伝導}\\
+{\huge GaAs二次元電子系への超伝導接合の作製}\\
 \vspace{100truept}
 {\large 指導教員：大岩　顕　教授 \\ }
 \vspace{30truept}
-{\large 2018/2/17}\\%%\hspace{15pt}
+{\large 2018年2月17日}\\%%\hspace{15pt}
 {\large 学籍番号 \hspace{15pt} 08D14160}\\
 {\large 氏名　\hspace{15pt}　吉原　拓哉}\\
 \vspace{100truept}
@@ -70,11 +81,17 @@
 \newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
 \makeatother
 
+\input{../intro/intro.tex}
+\input{../theory/theory.tex}
 \input{../fablication/fablication.tex}
-%\begin{thebibliography}{99}
-%  \input{reference.txt}
-%\end{thebibliography}
 
+\chapter*{謝辞}
+\addcontentsline{toc}{chapter}{謝辞}
+\input{../acknowledgement/acknowledgement.tex}
+
+\begin{thebibliography}{99}
+\input{reference.txt}
+\end{thebibliography}
 
 \appendix
 

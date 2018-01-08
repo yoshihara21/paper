@@ -1,0 +1,8 @@
+﻿\bibitem{QH} K.v. Klitzing, G. Dorda, M. Pepper, Phys. Rev. Lett. 45 (1980) 494
+
+\bibitem{Topologivcal} Liang Fu and C. L. Kane Phys. Rev. B 76 (2007) 045302
+
+\bibitem{TopologivcalS} Satoshi Sasaki, M. Kriener, Kouji Segawa, Keiji Yada, Yukio Tanaka, Masatoshi Sato, and Yoichi AndoPhys. Rev. Lett.107 (2011) 217001
+
+\bibitem{nature} Zhong Wan, Aleksandr Kazakov, Michael J. Manfra, Loren N. Pfeiffer, Ken W. West & Leonid P. Rokhinson Nature Communications 6 7426 (2015)
+%\bibitem{} 
